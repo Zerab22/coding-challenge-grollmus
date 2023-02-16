@@ -11,5 +11,7 @@ export interface Device {
   siplusCatalog: boolean,
   simaticCatalog: boolean,
   rotationAxisNumber: number,
-  positionAxisNumber: number
+  positionAxisNumber: number,
+  advancedEnvironmentalConditions?: boolean,
+  terminalElement?: boolean
 }
