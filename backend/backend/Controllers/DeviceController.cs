@@ -9,19 +9,19 @@ namespace backend.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("Get");
+            return Ok();
         }
 
         [HttpPost]
-        public IActionResult Post()
+        public IActionResult Post([FromBody]string newDevice)
         {
-            return Ok("Post");
+            return Ok();
         }
 
         [HttpDelete]
         public IActionResult Delete()
         {
-            return Ok("Delete");
+            return Ok();
         }
     }
 }
