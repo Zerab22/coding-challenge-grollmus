@@ -88,6 +88,9 @@ export class ConnectionService {
   }
 
   public deleteDevice(id: string) {
-    console.log('Device to delete: ' + id);
+    const devices = this.devices.getValue()
+    const index = devices.findIndex(device => device.id === id);
+    devices.splice(index, 1);
+    this.devices.next(devices);
   }
 }

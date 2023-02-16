@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="details">
+  <div class="details" (click)="navigateToDetails()">
     <p>{{ device.name }}</p>
     <p class="device-type-id">{{ device.deviceTypeId }}</p>
     <p *ngIf="device.failsafe">
@@ -9,5 +9,20 @@
       Failsafe: <img src="../../../assets/cross.png" alt="No" />
     </p>
   </div>
-  <img src="../../../assets/delete.png" alt="del" class="delete-button" (click)="delete()"/>
+  <img
+    src="../../../assets/delete.png"
+    alt="del"
+    class="delete-button"
+    (click)="openDeleteDialog()"
+  />
+</div>
+
+<div class="delete-dialog-overlay" *ngIf="showDeleteDialog">
+  <div class="delete-dialog">
+    <p>Gerät wirklich löschen?</p>
+    <div class="button-section">
+      <button (click)="delete()">Löschen</button>
+      <button (click)="showDeleteDialog = false">Abbrechen</button>
+    </div>
+  </div>
 </div>

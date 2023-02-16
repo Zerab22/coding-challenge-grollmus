@@ -1,1 +1,5 @@
-<div class="overview-container"></div>
+<div class="overview-container">
+  <div *ngIf="device">{{device.id}}</div>
+  <div *ngIf="device">{{device.name}}</div>
+  <div *ngIf="device">{{device.failsafe}}</div>
+</div>
