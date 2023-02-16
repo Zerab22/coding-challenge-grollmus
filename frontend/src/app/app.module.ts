@@ -5,10 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { OverviewComponent } from './components/overview/overview.component';
+import { DetailViewComponent } from './components/detail-view/detail-view.component';
+import { TileComponent } from './components/tile/tile.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    OverviewComponent,
+    DetailViewComponent,
+    TileComponent
   ],
   imports: [
     BrowserModule,
