@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Device } from 'src/app/interfaces/device.interface';
+import { ConnectionService } from 'src/app/services/connection.service';
 
 @Component({
   selector: 'app-tile',
@@ -6,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./tile.component.scss']
 })
 export class TileComponent {
+  @Input() device!: Device;
 
+  constructor(private connection: ConnectionService) { }
+
+  public delete() {
+    this.connection.deleteDevice(this.device.id)
+  }
 }

@@ -1,1 +1,13 @@
-<p>tile works!</p>
+<div class="container">
+  <div class="details">
+    <p>{{ device.name }}</p>
+    <p class="device-type-id">{{ device.deviceTypeId }}</p>
+    <p *ngIf="device.failsafe">
+      Failsafe: <img src="../../../assets/check.png" alt="Yes" />
+    </p>
+    <p *ngIf="!device.failsafe">
+      Failsafe: <img src="../../../assets/cross.png" alt="No" />
+    </p>
+  </div>
+  <img src="../../../assets/delete.png" alt="del" class="delete-button" (click)="delete()"/>
+</div>

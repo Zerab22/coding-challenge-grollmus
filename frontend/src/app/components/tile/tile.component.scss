@@ -1,0 +1,33 @@
+.container {
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  width: 200px;
+  display: grid;
+  grid-template-columns: auto 20px;
+  box-shadow: 0px 0px 5px #000;
+
+  p {
+    font-size: 2rem;
+    color: #000;
+
+    img {
+      height: 15px;
+      margin-left: 5px;
+    }
+  }
+
+  .device-type-id {
+    color: #777;
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+  }
+
+  .delete-button {
+    height: 20px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

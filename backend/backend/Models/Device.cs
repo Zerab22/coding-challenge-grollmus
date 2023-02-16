@@ -15,9 +15,10 @@
         public bool simaticCatalog { get; set; }
         public int rotationAxisNumber { get; set; }
         public int positionAxisNumber { get; set; }
-        public bool advancedEnvironmentalConditions { get; set; }
+        public bool? advancedEnvironmentalConditions { get; set; }
+        public bool? terminalElement { get; set; }
 
-        public Device(string id, string name, string deviceTypeId, bool failsafe, int tempMin, int tempMax, string installationPosition, bool insertInto19InchCabinet, bool motionEnable, bool siplusCatalog, bool simaticCatalog, int rotationAxisNumber, int positionAxisNumber, bool advancedEnvironmentalConditions)
+        public Device(string id, string name, string deviceTypeId, bool failsafe, int tempMin, int tempMax, string installationPosition, bool insertInto19InchCabinet, bool motionEnable, bool siplusCatalog, bool simaticCatalog, int rotationAxisNumber, int positionAxisNumber, bool advancedEnvironmentalConditions, bool terminalElement)
         {
             this.id = id;
             this.name = name;
@@ -33,6 +34,7 @@
             this.rotationAxisNumber = rotationAxisNumber;
             this.positionAxisNumber = positionAxisNumber;
             this.advancedEnvironmentalConditions = advancedEnvironmentalConditions;
+            this.terminalElement = terminalElement;
         }
     }
 }

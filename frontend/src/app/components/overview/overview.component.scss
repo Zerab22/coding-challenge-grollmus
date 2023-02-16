@@ -1,0 +1,29 @@
+.overview-container {
+  display: grid;
+  grid-template-columns: 80% 20%;
+
+  .tile-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    app-tile {
+      margin-left: 20px;
+      margin-bottom: 20px;
+    }
+  }
+
+  button {
+    height: 40px;
+    width: 80%;
+    font-size: 1.5rem;
+
+    border: unset;
+    background-color: #bbb;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #999;
+    }
+  }
+}

@@ -86,4 +86,8 @@ export class ConnectionService {
   public getDevices(): Promise<Device> {
     return lastValueFrom(this.http.get<Device>(this.connectionString));
   }
+
+  public deleteDevice(id: string) {
+    console.log('Device to delete: ' + id);
+  }
 }
