@@ -1,6 +1,16 @@
 <div class="overview-container">
-  <div class="tile-container">
-      <app-tile *ngFor="let device of devices" [device]="device"></app-tile>
+  <div class="tile-container" *ngIf="devices.length !== 0; else placeholder">
+    <app-tile *ngFor="let device of devices" [device]="device"></app-tile>
   </div>
-  <button>Geräte hinzufügen</button>
+  <ng-template #placeholder>
+    <p>Keine Geräte gefunden</p>
+  </ng-template>
+  <button (click)="openFileImport()">Geräte hinzufügen</button>
+  <input
+    #fileInput
+    class="invisible-file-picker"
+    type="file"
+    accept=".json"
+    (change)="fileChanged($event)"
+  />
 </div>

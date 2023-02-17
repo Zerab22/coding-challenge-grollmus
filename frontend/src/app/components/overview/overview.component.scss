@@ -2,10 +2,16 @@
   display: grid;
   grid-template-columns: 80% 20%;
 
+  p {
+    margin-left: 10px;
+    font-size: 1.5rem;
+  }
+
   .tile-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    max-height: calc(100vh - 100px);
 
     app-tile {
       margin-left: 20px;
@@ -15,7 +21,7 @@
 
   button {
     height: 40px;
-    width: 80%;
+    margin: 0px 10px;
     font-size: 1.5rem;
 
     border: unset;
@@ -25,5 +31,9 @@
       cursor: pointer;
       background-color: #999;
     }
+  }
+
+  .invisible-file-picker {
+    display: none;
   }
 }
