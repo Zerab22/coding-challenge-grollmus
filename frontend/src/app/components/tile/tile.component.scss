@@ -1,37 +1,45 @@
 .container {
   padding: 10px;
-  border: 1px solid #000;
+  border: 1px solid #00719c;
   border-radius: 5px;
   width: 200px;
   display: grid;
   grid-template-columns: auto 20px;
-  box-shadow: 0px 0px 5px #000;
+  box-shadow: 0px 0px 7px 2px #00719c;
+  background-color: #009bd6;
 
   &:hover {
-    background-color: #ddd;
+    background-color: #00719c;
   }
 
   .details {
     cursor: pointer;
     p {
       font-size: 2rem;
-      color: #000;
-
-      img {
-        height: 15px;
-        margin-left: 5px;
-      }
     }
 
     .device-type-id {
-      color: #777;
+      color: #ccc;
       font-size: 1.6rem;
       margin-bottom: 5px;
+    }
+
+    .failsafe {
+      display: flex;
+      align-items: center;
+      img {
+        height: 15px;
+        margin-left: 10px;
+        &.cross {
+          filter: invert(100%);
+        }
+      }
     }
   }
 
   .delete-button {
     height: 20px;
+    filter: invert(100%);
 
     &:hover {
       cursor: pointer;
@@ -40,10 +48,10 @@
 }
 
 .delete-dialog-overlay {
+  z-index: 10;
   height: 100vh;
   width: 100vw;
-  background-color: #111;
-  opacity: 0.95;
+  background-color: #111111f1;
   position: absolute;
   top: 0;
   left: 0;
@@ -53,8 +61,8 @@
 
   .delete-dialog {
     width: 250px;
-    background-color: #eee;
-    padding: 10px;
+    background-color: #00719c;
+    padding: 15px;
 
     p {
       font-size: 1.5rem;
@@ -66,6 +74,8 @@
       flex-direction: row;
       justify-content: space-between;
       button {
+        background-color: unset;
+        border: 1px solid #00415a;
         padding: 5px;
         font-size: 1.5rem;
         width: 48%;

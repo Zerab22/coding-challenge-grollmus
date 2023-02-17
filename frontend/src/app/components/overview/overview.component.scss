@@ -19,21 +19,32 @@
     }
   }
 
-  button {
-    height: 40px;
-    margin: 0px 10px;
-    font-size: 1.5rem;
+  .upload-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    border: unset;
-    background-color: #bbb;
+    button {
+      margin: 0px 10px;
+      font-size: 1.5rem;
+      padding: 10px;
+      border: unset;
+      background-color: #009bd6;
 
-    &:hover {
-      cursor: pointer;
-      background-color: #999;
+      &:hover {
+        cursor: pointer;
+        background-color: #00719c;
+      }
     }
-  }
 
-  .invisible-file-picker {
-    display: none;
+    .loader {
+      height: 50px;
+      width: 50px;
+      margin-top: 20px;
+    }
+
+    .invisible-file-picker {
+      display: none;
+    }
   }
 }

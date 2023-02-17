@@ -5,12 +5,20 @@
   <ng-template #placeholder>
     <p>Keine Geräte gefunden</p>
   </ng-template>
-  <button (click)="openFileImport()">Geräte hinzufügen</button>
-  <input
-    #fileInput
-    class="invisible-file-picker"
-    type="file"
-    accept=".json"
-    (change)="fileChanged($event)"
-  />
+  <div class="upload-section">
+    <button (click)="openFileImport()">Geräte hinzufügen</button>
+    <img
+      src="../../../assets/loading.gif"
+      alt="loading"
+      class="loader"
+      *ngIf="uploadOngoing"
+    />
+    <input
+      #fileInput
+      class="invisible-file-picker"
+      type="file"
+      accept=".json"
+      (change)="fileChanged($event)"
+    />
+  </div>
 </div>
