@@ -3,6 +3,7 @@
     <h1>{{ device.name }}</h1>
     <h2>{{ device.deviceTypeId }}</h2>
   </div>
+  <div *ngIf="!device" class="placeholder">Gerät konnte nicht gefunden werden</div>
   <button (click)="navigateToOverlay()">Zurück</button>
 </div>
 <div class="info-container" *ngIf="device">
