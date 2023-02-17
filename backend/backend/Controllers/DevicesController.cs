@@ -33,14 +33,15 @@ namespace backend.Controllers
         }
 
         [HttpDelete]
-        public IActionResult Delete([FromBody]string idToDelete)
+        [Route("{idToDelete}")]
+        public IActionResult Delete(string idToDelete)
         {
             var deviceToDelete = _context.Devices.Find(idToDelete);
             if (deviceToDelete != null)
             {
                 _context.Devices.Remove(deviceToDelete);
                 _context.SaveChanges();
-                return Ok("Delete Successful");
+                return Ok();
             }
             return BadRequest("ID not found");
         }
