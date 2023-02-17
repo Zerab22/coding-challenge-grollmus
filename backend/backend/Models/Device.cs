@@ -18,7 +18,7 @@
         public bool? advancedEnvironmentalConditions { get; set; }
         public bool? terminalElement { get; set; }
 
-        public Device(string id, string name, string deviceTypeId, bool failsafe, int tempMin, int tempMax, string installationPosition, bool insertInto19InchCabinet, bool motionEnable, bool siplusCatalog, bool simaticCatalog, int rotationAxisNumber, int positionAxisNumber, bool advancedEnvironmentalConditions, bool terminalElement)
+        public Device(string id, string name, string deviceTypeId, bool failsafe, int tempMin, int tempMax, string installationPosition, bool insertInto19InchCabinet, bool motionEnable, bool siplusCatalog, bool simaticCatalog, int rotationAxisNumber, int positionAxisNumber, bool? advancedEnvironmentalConditions, bool? terminalElement)
         {
             this.id = id;
             this.name = name;

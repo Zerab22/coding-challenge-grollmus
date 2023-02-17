@@ -29,7 +29,7 @@ namespace backend.Controllers
             }
             _context.Devices.Add(newDevice);
             _context.SaveChanges();
-            return Ok(_context.Devices);
+            return Ok();
         }
 
         [HttpDelete]

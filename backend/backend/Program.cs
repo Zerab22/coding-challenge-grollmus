@@ -11,13 +11,6 @@ builder.Services.AddDbContext<DeviceDbContext>(options => options.UseInMemoryDat
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var Origins = "_Origins";
-
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: Origins, policy => policy.WithOrigins("http://localhost:4200"));
-});
-
 /*builder.Services.AddAuthentication(NegotiateDefaults.AuthenticationScheme)
    .AddNegotiate();
 
@@ -41,7 +34,11 @@ if (app.Environment.IsDevelopment())
 //app.UseAuthentication();
 //app.UseAuthorization();
 
-app.UseCors(Origins);
+app.UseCors(x => x
+    .AllowAnyMethod()
+    .AllowAnyHeader()
+    .SetIsOriginAllowed(origin => true)
+    .AllowCredentials());
 
 app.MapControllers();
 
