@@ -1,4 +1,4 @@
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { Device } from 'src/app/interfaces/device.interface';
 import { ConnectionService } from 'src/app/services/connection.service';
@@ -9,10 +9,6 @@ import { ConnectionService } from 'src/app/services/connection.service';
   styleUrls: ['./tile.component.scss']
 })
 export class TileComponent {
-  // @HostListener('click')
-  // onClick() {
-  //   this.navigateToDetails();
-  // }
 
   @Input() device!: Device;
 
@@ -25,7 +21,10 @@ export class TileComponent {
   }
 
   public delete() {
-    this.connection.deleteDevice(this.device.id)
+    this.connection.deleteDevice(this.device.id).then(() => {
+      this.showDeleteDialog = false;
+      this.connection.getDevices();
+    })
   }
 
   public navigateToDetails() {

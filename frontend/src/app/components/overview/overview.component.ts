@@ -16,9 +16,9 @@ export class OverviewComponent implements OnInit {
   constructor(private connection: ConnectionService) {}
 
   ngOnInit(): void {
-    this.connection.getDevices().then((result) => {
-      this.devices = result;
-      this.connection.devices = result;
+    this.connection.getDevices();
+    this.connection.devices.subscribe((devices) => {
+      this.devices = devices;
     });
   }
 

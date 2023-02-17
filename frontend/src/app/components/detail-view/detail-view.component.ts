@@ -16,9 +16,9 @@ export class DetailViewComponent implements OnInit {
     private connection: ConnectionService
   ) {
     this.activatedRoute.params.subscribe((params) => {
-      this.device = this.connection.devices.find(
-        (device) => device.id === params['id']
-      );
+      this.device = this.connection.devices
+        .getValue()
+        .find((device) => device.id === params['id']);
     });
   }
 
