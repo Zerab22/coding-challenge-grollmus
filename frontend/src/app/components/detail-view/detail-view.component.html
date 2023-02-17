@@ -3,7 +3,9 @@
     <h1>{{ device.name }}</h1>
     <h2>{{ device.deviceTypeId }}</h2>
   </div>
-  <div *ngIf="!device" class="placeholder">Gerät konnte nicht gefunden werden</div>
+  <div *ngIf="!device" class="placeholder">
+    Gerät konnte nicht gefunden werden
+  </div>
   <button (click)="navigateToOverlay()">Zurück</button>
 </div>
 <div class="info-container" *ngIf="device">
@@ -32,7 +34,10 @@
     <p>{{ device.terminalElement }}</p>
   </div>
 
-  <div class="info-entry" *ngIf="device!.advancedEnvironmentalConditions !== null">
+  <div
+    class="info-entry"
+    *ngIf="device!.advancedEnvironmentalConditions !== null"
+  >
     <p>Erweiterte Umgebungsbedingungen</p>
     <p>{{ device.advancedEnvironmentalConditions }}</p>
   </div>

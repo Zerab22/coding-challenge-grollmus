@@ -3,9 +3,19 @@
     <p>{{ device.name }}</p>
     <p class="device-type-id">{{ device.deviceTypeId }}</p>
     <div class="failsafe">
-      <p>Failsafe: </p>
-      <img *ngIf="device.failsafe" src="../../../assets/check.png" alt="Yes" class="check"/>
-      <img *ngIf="!device.failsafe" src="../../../assets/cross.png" alt="No" class="cross"/>
+      <p>Failsafe:</p>
+      <img
+        *ngIf="device.failsafe"
+        src="../../../assets/check.png"
+        alt="Yes"
+        class="check"
+      />
+      <img
+        *ngIf="!device.failsafe"
+        src="../../../assets/cross.png"
+        alt="No"
+        class="cross"
+      />
     </div>
   </div>
   <img
