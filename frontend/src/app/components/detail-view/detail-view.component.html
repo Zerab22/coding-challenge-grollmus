@@ -1,5 +1,38 @@
-<div class="overview-container">
-  <div *ngIf="device">{{device.id}}</div>
-  <div *ngIf="device">{{device.name}}</div>
-  <div *ngIf="device">{{device.failsafe}}</div>
+<div class="header">
+  <div class="description" *ngIf="device">
+    <h1>{{ device.name }}</h1>
+    <h2>{{ device.deviceTypeId }}</h2>
+  </div>
+  <button (click)="navigateToOverlay()">Zurück</button>
+</div>
+<div class="info-container" *ngIf="device">
+  <div class="info-entry">
+    <p>Failsafe</p>
+    <p>{{ device.failsafe }}</p>
+  </div>
+
+  <div class="info-entry">
+    <p>Temperatur</p>
+    <p>{{ device.tempMin }} - {{ device.tempMax }} °C</p>
+  </div>
+
+  <div class="info-entry">
+    <p>Einbauposition</p>
+    <p>{{ device.installationPosition }}</p>
+  </div>
+
+  <div class="info-entry">
+    <p>Geeignet für 19" Schrank</p>
+    <p>{{ device.insertInto19InchCabinet }}</p>
+  </div>
+
+  <div class="info-entry" *ngIf="device.terminalElement !== null">
+    <p>Terminal vorhanden</p>
+    <p>{{ device.terminalElement }}</p>
+  </div>
+
+  <div class="info-entry" *ngIf="device!.advancedEnvironmentalConditions !== null">
+    <p>Erweiterte Umgebungsbedingungen</p>
+    <p>{{ device.advancedEnvironmentalConditions }}</p>
+  </div>
 </div>

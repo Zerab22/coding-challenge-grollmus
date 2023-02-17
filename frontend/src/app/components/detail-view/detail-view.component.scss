@@ -1,3 +1,53 @@
-.overview-container {
-  height: calc(100vh - 100px);
+.header {
+  padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  .description {
+    display: flex;
+    align-items: end;
+    h1 {
+      font-size: 2.5rem;
+    }
+    h2 {
+      font-size: 1.5rem;
+      margin-left: 10px;
+      color: #ccc;
+    }
+  }
+
+  button {
+    margin: 0px 10px;
+    font-size: 1.5rem;
+    padding: 10px;
+    border: unset;
+    background-color: #009bd6;
+
+    &:hover {
+      cursor: pointer;
+      background-color: #00719c;
+    }
+  }
+}
+
+.info-container {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+
+  .info-entry {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-radius: 5px;
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    &:nth-of-type(2n) {
+      background-color: #009bd6;
+    }
+  }
 }

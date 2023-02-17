@@ -22,7 +22,6 @@ export class OverviewComponent implements OnInit {
   constructor(private connection: ConnectionService) {}
 
   ngOnInit(): void {
-    this.connection.getDevices();
     this.addSubscriptions();
   }
 

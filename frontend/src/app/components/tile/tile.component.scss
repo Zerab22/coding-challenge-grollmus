@@ -79,6 +79,9 @@
         padding: 5px;
         font-size: 1.5rem;
         width: 48%;
+        &:hover {
+          background-color: #00415a;
+        }
       }
     }
   }
